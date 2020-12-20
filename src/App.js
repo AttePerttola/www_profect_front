@@ -20,6 +20,7 @@ class App extends React.Component {
         console.log('constructor')
     }
 
+    
     componentDidMount() {
         console.log('will mount')
         this.getMessages()
@@ -27,6 +28,7 @@ class App extends React.Component {
         
     }
 
+    //getting the messages from backend and saving them in array
     async getMessages() {
         const url = 'http://localhost:8000/getArray'
         const response = await fetch(url)
@@ -48,8 +50,8 @@ class App extends React.Component {
             
     }
 
+    //event handlers for the input fields
     handleMessageChange = (event) => {
-        console.log(event.target.value)
         this.setState({newMessage: event.target.value})
     }
     
